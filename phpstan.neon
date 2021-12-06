@@ -1,0 +1,6 @@
+parameters:
+	level: 9
+	paths:
+		- Hotel
+includes:
+    - vendor/yohanlaborda/behaviour/extension.neon

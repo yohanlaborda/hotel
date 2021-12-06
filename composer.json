@@ -1,0 +1,48 @@
+{
+    "name": "yohanlaborda/hotel",
+    "description": "Hotel reservation management",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "yohanlaborda\\Hotel\\": "Hotel/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yohan Laborda",
+            "email": "info@yohanlaborda.com"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "fix": "php-cs-fixer fix",
+        "phpstan-analyse": "phpstan analyse",
+        "psalm-analyse": "psalm",
+        "analyse": [
+            "@phpstan-analyse",
+            "@psalm-analyse"
+        ],
+        "tests": "phpunit",
+        "tests-coverage": "phpunit --coverage-html=tests-coverage",
+        "pre-commit": [
+            "@fix",
+            "@analyse",
+            "@tests"
+        ]
+    },
+    "require": {
+        "php": "^8.0",
+        "ext-json": "*",
+        "phpstan/phpstan": "^1.2",
+        "ramsey/uuid": "^4.2"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.18",
+        "phpunit/phpunit": "^9.5",
+        "vimeo/psalm": "^4.14",
+        "yohanlaborda/behaviour": "^1.0"
+    }
+}
